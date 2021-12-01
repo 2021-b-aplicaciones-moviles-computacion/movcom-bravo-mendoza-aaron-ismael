@@ -146,3 +146,43 @@ fun calcularSueldo(
 fun fibonacci(n: Int): Int{
     return if(n<2) n else fibonacci(n-1)+fibonacci(n-2)
 }
+
+abstract class NumerosJava{
+    protected val numeroUno: Int
+    private val numeroDos: Int
+    constructor(
+        uno: Int,
+        dos:Int
+    ){
+        numeroUno = uno;
+        numeroDos = dos;
+        println("Inicializar")
+
+    }
+}
+
+abstract class Numeros( //Constructor primario despues de los parentesis
+    val numeroUno: Int,
+    val numeroDos: Int
+){
+    init{
+        println("Inicializar")
+    }
+}
+
+class Suma(
+    uno: Int,
+    dos: Int,
+): Numeros( //El : llama al constructor padre
+    uno,
+    dos
+) {
+    init { // Bloque de codigo del constructor primario
+        this.numeroUno
+        this.numeroDos
+    }
+    fun sumar(): Int {
+        val total: Int = numeroUno + numeroDos
+        return total
+    }
+}
