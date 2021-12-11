@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="texto">English Port</string>
+    <color name="color_letras">#0239DE</color>
+    <color name="color_fondo">#88A9B9</color>
+</resources>
