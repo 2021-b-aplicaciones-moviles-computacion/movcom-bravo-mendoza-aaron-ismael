@@ -130,6 +130,7 @@ fun main() {
             return@filter mayoresACinco
         }
     val respuestaFilterDos = arregloDinamico.filter { it <= 5 }
+    println("filtrados")
     println(respuestaFilter)
     println(respuestaFilterDos)
 
