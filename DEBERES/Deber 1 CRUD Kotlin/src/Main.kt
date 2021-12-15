@@ -7,7 +7,7 @@ fun main() {
 
     val scanner = Scanner(System.`in`)
     MarcaMoto.leerArchivoMarca()
-    //MarcaMoto.mostrarMarca(MarcaMoto.listaMarcaMotos)
+
     do {
         print(
             "Bienvenidos\n" +
@@ -20,6 +20,7 @@ fun main() {
         var opcionMenu = scanner.nextLine().toInt()
         when (opcionMenu) {
             1 -> {
+                MarcaMoto.mostrarMarca(MarcaMoto.listaMarcaMotos)
                 do {
                     print(
                         "Seleccione la operación a realizar\n" +
