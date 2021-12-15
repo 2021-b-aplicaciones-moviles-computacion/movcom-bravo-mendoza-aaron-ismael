@@ -431,13 +431,20 @@ fun main() {
                                 }
                             }while(opcionActualizar != 0)
                         }
+                        4 -> {
+                            println("Ingrese el id del modelo a eliminar")
+                            var id = scanner.nextLine().toInt()
+                            ModeloMoto.eliminarModelo(id)
+                            break
+                        }
+                        0 -> {
+
+                        }
+                        else -> {
+                            println("Escoja la opción correcta")
+                        }
                     }
                 } while (opcionModelo != 0)
-            }
-            4 -> {
-                println("Ingrese el id del modelo a eliminar")
-                var id = scanner.nextLine().toInt()
-                ModeloMoto.eliminarModelo(id)
             }
             0 -> {
 
