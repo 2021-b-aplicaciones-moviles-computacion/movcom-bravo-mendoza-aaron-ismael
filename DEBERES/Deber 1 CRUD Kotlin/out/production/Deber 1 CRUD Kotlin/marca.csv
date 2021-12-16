@@ -1,4 +1,4 @@
-ID,Nombre,Fecha de Lanzamiento, MotoGP, Promedio de Ventas
-1,Suzuki,Tue Dec 14 23:36:22 ECT 2021,true,5000000.0
-2,Yamaha,Tue Dec 14 23:37:08 ECT 2021,true,323.0
-3,Ducatti,Tue Dec 14 23:39:47 ECT 2021,true,65210.0
+ID,Nombre,Fecha de Registro,MotoGP,Promedio de Ventas
+1,Suzuki,Wed Dec 15 15:06:32 ECT 2021,true,5000000.0
+2,Yamaha,Wed Dec 15 15:06:32 ECT 2021,true,323.0
+4,Suzuki,Wed Dec 15 15:07:57 ECT 2021,false,789456.32

@@ -1,8 +1,7 @@
 import java.io.*
-import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.math.cos
+
 
 fun main() {
 
@@ -367,7 +366,7 @@ fun main() {
                                             "Opcion: "
                                 )
                                 var opcionActualizar = scanner.nextLine().toInt()
-                                when(opcionActualizar){
+                                when (opcionActualizar) {
                                     1 -> {
                                         print("Ingrese el id del modelo a actualiazr")
                                         var id = scanner.nextLine().toInt()
@@ -387,24 +386,24 @@ fun main() {
                                     3 -> {
                                         print("Ingrese el id del modelo a actualiazr")
                                         var id = scanner.nextLine().toInt()
-                                        do{
-                                            print("1: Si\n" +
-                                                    "2: No\n" +
-                                                    "0: Salir\n" +
-                                                    "Opcion: ")
+                                        do {
+                                            print(
+                                                "1: Si\n" +
+                                                        "2: No\n" +
+                                                        "0: Salir\n" +
+                                                        "Opcion: "
+                                            )
                                             var opcionActualizarDisponbilidad = scanner.nextLine().toInt()
-                                            if(opcionActualizarDisponbilidad == 1){
+                                            if (opcionActualizarDisponbilidad == 1) {
                                                 ModeloMoto.actualizarModeloDisponible(id, true)
                                                 break
-                                            }
-                                            else if(opcionActualizarDisponbilidad == 2){
+                                            } else if (opcionActualizarDisponbilidad == 2) {
                                                 ModeloMoto.actualizarModeloDisponible(id, false)
                                                 break
-                                            }
-                                            else{
+                                            } else {
                                                 println("Ingrese la opcion correcta")
                                             }
-                                        }while (opcionActualizarDisponbilidad != 0)
+                                        } while (opcionActualizarDisponbilidad != 0)
                                     }
                                     4 -> {
                                         print("Ingrese el id del modelo a actualiazr")
@@ -429,7 +428,7 @@ fun main() {
                                         println("Ingrese la opcion correcta")
                                     }
                                 }
-                            }while(opcionActualizar != 0)
+                            } while (opcionActualizar != 0)
                         }
                         4 -> {
                             println("Ingrese el id del modelo a eliminar")
@@ -537,7 +536,7 @@ class MarcaMoto(
 
         fun mostrarMarca(ArregloMotos: ArrayList<MarcaMoto>) {
 
-            println("Id,Nombre,Fecha de Lanzamiento,MotoGP,Promedio de Ventas")
+            println("Id,Nombre,Fecha de Registro,MotoGP,Promedio de Ventas")
             ArregloMotos.forEach { motoActual: MarcaMoto ->
                 println(
                     "${motoActual.id}," +
@@ -556,7 +555,7 @@ class MarcaMoto(
                 FileWriter(ruta, false).use { fw ->
                     BufferedWriter(fw).use { bw ->
                         PrintWriter(bw).use { out ->
-                            out.print("ID,Nombre,Fecha de Lanzamiento, MotoGP, Promedio de Ventas\n")
+                            out.print("ID,Nombre,Fecha de Registro,MotoGP,Promedio de Ventas\n")
                         }
                     }
                 }
@@ -584,12 +583,16 @@ class MarcaMoto(
             var fila = miLector.nextLine()
             var datos = StringTokenizer(fila, ",")
             while (datos.hasMoreTokens()) {
+
                 datos.nextToken()
+
             }
             while (miLector.hasNextLine()) {
+
                 fila = miLector.nextLine()
                 datos = StringTokenizer(fila, ",")
                 while (datos.hasMoreTokens()) {
+
                     var id = datos.nextToken().toInt()
                     var nombre = datos.nextToken()
                     var fecha = datos.nextToken()
@@ -599,7 +602,6 @@ class MarcaMoto(
                     listaMarcaMotos.add(miMarcaMoto)
 
                 }
-                println("")
             }
         }
     }
@@ -694,7 +696,7 @@ class ModeloMoto(
         }
 
         fun mostrarModelo(arregloModelos: ArrayList<ModeloMoto>) {
-            println("Id,Nombre,Fecha de Lanzamiento, Disponibilidad, Costo, Id Marca")
+            println("Id,Nombre,Fecha de registro,Disponibilidad,Costo,Id Marca")
             arregloModelos.forEach { modeloActual: ModeloMoto ->
                 println(
                     "${modeloActual.id}," +
@@ -714,7 +716,7 @@ class ModeloMoto(
                 FileWriter(ruta, false).use { fw ->
                     BufferedWriter(fw).use { bw ->
                         PrintWriter(bw).use { out ->
-                            out.print("ID,Nombre,Fecha de Lanzamiento,Disponibilidad,Costo,idMarca\n")
+                            out.print("ID,Nombre,Fecha de registro,Disponibilidad,Costo,idMarca\n")
                         }
                     }
                 }
@@ -762,7 +764,6 @@ class ModeloMoto(
                     listaModeloMotos.add(miModeloMoto)
 
                 }
-                println("")
             }
         }
     }
