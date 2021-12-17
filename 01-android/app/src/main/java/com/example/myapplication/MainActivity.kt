@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.activity.result.contract.ActivityResultContracts
 
@@ -12,6 +13,11 @@ class MainActivity : AppCompatActivity() {
     val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         result ->
         if(result.resultCode == Activity.RESULT_OK){
+            if(result.data != null){
+                val data = result.data
+                Log.i("intents", "${data?.getStringExtra("nombreModificado")}")
+                Log.i("intents", "${data?.getIntExtra("edadModificado", 0)}")
+            }
 
         }
     }
@@ -40,8 +46,9 @@ class MainActivity : AppCompatActivity() {
         //solo variables primitivas
         intentExplicito.putExtra("nombre", "Aaron")
         intentExplicito.putExtra("apellido", "Bravo")
-        intentExplicito.putExtra("edad", "29")
-        resultLauncher.launch(intent)
+        intentExplicito.putExtra("edad", 29)
+        intentExplicito.putExtra("Entrenador",BEntrenador("a", "b"))
+        resultLauncher.launch(intentExplicito)
         //startActivityForResult(intent, CODIGO_RESPUESTA_INTENT_EXPLICITO)
     }
 
