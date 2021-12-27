@@ -14,7 +14,14 @@
             android:exported="false" />
         <activity
             android:name=".BListView"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <data android:mimeType="text/plain"></data>
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".ACicloVida"
             android:exported="false" />

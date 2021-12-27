@@ -2,14 +2,16 @@ package com.example.myapplication
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.util.Log
 import android.widget.Button
 import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : AppCompatActivity() {
-    val CODIGO_RESPUESTA_INTENT_EXPLICITO = 401
+    //val CODIGO_RESPUESTA_INTENT_EXPLICITO = 401
     val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         result ->
         if(result.resultCode == Activity.RESULT_OK){
@@ -18,7 +20,33 @@ class MainActivity : AppCompatActivity() {
                 Log.i("intents", "${data?.getStringExtra("nombreModificado")}")
                 Log.i("intents", "${data?.getIntExtra("edadModificado", 0)}")
             }
-
+        }
+        if(result.resultCode == Activity.RESULT_CANCELED){
+            Log.i("intents", "Cancelado")
+        }
+    }
+    val resultlauncher2 = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+        result ->
+        if(result.resultCode == Activity.RESULT_OK){
+            val data = result.data
+            if(data != null){
+                val uri: Uri = data.data!!
+                val cursor = contentResolver.query(
+                    uri,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                )
+                cursor?.moveToFirst()
+                val indiceTelefono = cursor?.getColumnIndex(
+                    ContactsContract.CommonDataKinds.Phone.NUMBER
+                )
+                val telefono = cursor?.getString(indiceTelefono!!)
+                cursor?.close()
+                Log.i("intents", "Telefono: ${telefono}")
+            }
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +65,13 @@ class MainActivity : AppCompatActivity() {
         val botonIntent = findViewById<Button>(R.id.btn_intent)
         botonIntent.setOnClickListener {
             abrirActividadConParametros(CIntentExplicitoParametros::class.java)
+        }
+
+        val botonIntentImplicito = findViewById<Button>(R.id.btn_ir_intent_implicito)
+        botonIntentImplicito.setOnClickListener {
+            val intentConRespuesta = Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI)
+            //resultLauncher.launch(intentConRespuesta)
+            resultlauncher2.launch(intentConRespuesta)
         }
 
     }
