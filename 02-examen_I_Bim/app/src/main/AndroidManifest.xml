@@ -10,7 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Motos">
         <activity
-            android:name=".MainActivity"
+            android:name=".CrearModelo"
+            android:exported="false" />
+        <activity
+            android:name=".CrearMarca"
+            android:exported="false" />
+        <activity
+            android:name=".EditarModelo"
+            android:exported="false" />
+        <activity
+            android:name=".Modelo"
+            android:exported="false" />
+        <activity
+            android:name=".EditarMarca"
+            android:exported="false" />
+        <activity
+            android:name=".Marca"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
