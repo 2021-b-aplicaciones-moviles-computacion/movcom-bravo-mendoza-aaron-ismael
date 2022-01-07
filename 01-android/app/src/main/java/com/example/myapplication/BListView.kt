@@ -20,7 +20,7 @@ class BListView : AppCompatActivity() {
         setContentView(R.layout.activity_blist_view)
 
         val listView = findViewById<ListView>(R.id.lv_list_view)
-        val arreglo: ArrayList<Int> = arrayListOf(1, 2, 3, 4, 5)
+        //val arreglo: ArrayList<Int> = arrayListOf(1, 2, 3, 4, 5)
         val adaptador = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
@@ -30,7 +30,14 @@ class BListView : AppCompatActivity() {
         adaptador.notifyDataSetChanged()
 
         val botonAnadirListView = findViewById<Button>(R.id.btn_anadir_list_view)
-        botonAnadirListView.setOnClickListener { anadirItem(adaptador,BBaseDatosMemoria.arregloBEntrenador,1) }
+        botonAnadirListView.setOnClickListener {
+            anadirItem(
+                adaptador,
+                BBaseDatosMemoria.arregloBEntrenador,
+                1
+            )
+        }
+
 
         /*listView.setOnItemLongClickListener { parent, view, position, id ->
             Log.i("list-view", "LONG CLICK ${arreglo[position]}")
@@ -113,7 +120,11 @@ class BListView : AppCompatActivity() {
     }
 
 
-    fun anadirItem(adaptador: ArrayAdapter<BEntrenador>, arreglo: ArrayList<BEntrenador>, valor: Int) {
+    fun anadirItem(
+        adaptador: ArrayAdapter<BEntrenador>,
+        arreglo: ArrayList<BEntrenador>,
+        valor: Int
+    ) {
         arreglo.add(BEntrenador("otro", "oao.com"))
         adaptador.notifyDataSetChanged()
     }

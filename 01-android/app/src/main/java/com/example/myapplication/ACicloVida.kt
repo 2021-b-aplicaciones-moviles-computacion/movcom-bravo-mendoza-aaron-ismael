@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 
 class ACicloVida : AppCompatActivity() {
-    var total =0
+    var total = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_aciclo_vida)
@@ -18,7 +18,7 @@ class ACicloVida : AppCompatActivity() {
         }
     }
 
-    fun aumentarTotal(){
+    fun aumentarTotal() {
         total = total + 1
         val textViewCicloVida = findViewById<TextView>(R.id.tv_ciclo_vida)
         textViewCicloVida.text = total.toString()
@@ -34,7 +34,7 @@ class ACicloVida : AppCompatActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         val totalRecuperado: Int? = savedInstanceState.getInt("totalGuardado")
-        if(totalRecuperado != null){
+        if (totalRecuperado != null) {
             this.total = totalRecuperado
             val txtCicloVida = findViewById<TextView>(R.id.tv_ciclo_vida)
             txtCicloVida.text = total.toString()
