@@ -9,11 +9,12 @@ class BMarca(
     var nombre: String?,
     var esCompetencia: Boolean,
     var promedioVentas: Double
-): Parcelable{
+) : Parcelable {
 
-    override fun toString(): String{
+    override fun toString(): String {
         return "${id}: ${nombre} ${esCompetencia} ${promedioVentas}"
     }
+
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString(),

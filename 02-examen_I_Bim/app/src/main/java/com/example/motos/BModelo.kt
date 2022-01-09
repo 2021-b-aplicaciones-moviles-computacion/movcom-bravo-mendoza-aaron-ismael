@@ -1,16 +1,19 @@
 package com.example.motos
-import android.os.Build
+
 import android.os.Parcel
 import android.os.Parcelable
 import androidx.annotation.RequiresApi
 
 class BModelo(
     val id: Int,
-    val nombre: String?,
-    val disponible: Boolean,
-    val costo: Double,
+    var nombre: String?,
+    var disponible: Boolean,
+    var costo: Double,
     val idMarca: Int
-): Parcelable {
+) : Parcelable {
+    override fun toString(): String {
+        return "${id}: ${nombre}, ${disponible} ${costo} ${idMarca}"
+    }
 
     constructor(parcel: Parcel) : this(
         parcel.readInt(),

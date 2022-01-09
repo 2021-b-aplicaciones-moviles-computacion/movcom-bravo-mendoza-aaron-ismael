@@ -53,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_promedio_marca_editar" />
 
     <Switch
-        android:id="@+id/sw_disponible_editar"
+        android:id="@+id/sw_competencia_editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Disponible"

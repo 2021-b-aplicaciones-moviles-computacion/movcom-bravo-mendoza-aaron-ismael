@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Switch
+import android.widget.Toast
 
 
 class CrearMarca : AppCompatActivity() {
@@ -19,17 +20,22 @@ class CrearMarca : AppCompatActivity() {
             val nuevaMarca = BMarca(
                 findViewById<EditText>(R.id.txt_id_marca).text.toString().toInt(),
                 findViewById<EditText>(R.id.txt_nombre_marca).text.toString(),
-                findViewById<Switch>(R.id.sw_disponible).isChecked,
+                findViewById<Switch>(R.id.sw_competencia).isChecked,
                 findViewById<EditText>(R.id.txt_promedio_marca).text.toString().toDouble()
             )
             BBaseDatosMemoria.arregloMarca.add(nuevaMarca)
             Log.i("Marca", "${BBaseDatosMemoria.arregloMarca}")
-
-            startActivity(Intent(
+            Toast.makeText(
                 this,
-                Marca::class.java
-            ))
+                "Se creó ${findViewById<EditText>(R.id.txt_nombre_marca).text}",
+                Toast.LENGTH_SHORT
+            ).show()
+            startActivity(
+                Intent(
+                    this,
+                    Marca::class.java
+                )
+            )
         }
     }
-
 }

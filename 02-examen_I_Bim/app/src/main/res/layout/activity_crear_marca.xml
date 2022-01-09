@@ -53,11 +53,11 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_promedio_marca" />
 
     <Switch
-        android:id="@+id/sw_disponible"
+        android:id="@+id/sw_competencia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:checked="true"
-        android:text="Disponible"
+        android:text="Competencia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_promedio_marca" />
 
