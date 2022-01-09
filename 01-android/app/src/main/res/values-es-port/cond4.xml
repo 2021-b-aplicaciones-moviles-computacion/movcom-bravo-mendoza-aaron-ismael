@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="texto">Español Port</string>
+    <color name="color_letras">#DD3414C6</color>
+    <color name="color_fondo">#F91764B3</color>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="texto">English Land</string>
+    <color name="color_letras">#8000FF</color>
+    <color name="color_fondo">#DFF0D8</color>
+</resources>

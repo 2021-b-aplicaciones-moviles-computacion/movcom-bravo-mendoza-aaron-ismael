@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="texto">Español Landscape</string>
+    <color name="color_letras">#FFB00034</color>
+    <color name="color_fondo">#FF375555</color>
+</resources>
