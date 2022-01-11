@@ -55,4 +55,15 @@
         app:layout_constraintEnd_toEndOf="@+id/btn_ir_ciclo_vida"
         app:layout_constraintStart_toStartOf="@+id/btn_ir_ciclo_vida" />
 
+    <Button
+        android:id="@+id/btn_ir_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="116dp"
+        android:text="Recycler View"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ir_intent_implicito"
+        app:layout_constraintEnd_toEndOf="@+id/btn_ir_intent_implicito"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="@+id/btn_ir_intent_implicito" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
