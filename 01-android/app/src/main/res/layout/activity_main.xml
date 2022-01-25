@@ -66,4 +66,13 @@
         app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="@+id/btn_ir_intent_implicito" />
 
+    <Button
+        android:id="@+id/btn_ir_http"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="http"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ir_recycler_view"
+        app:layout_constraintEnd_toEndOf="@+id/btn_ir_recycler_view"
+        app:layout_constraintStart_toStartOf="@+id/btn_ir_recycler_view" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

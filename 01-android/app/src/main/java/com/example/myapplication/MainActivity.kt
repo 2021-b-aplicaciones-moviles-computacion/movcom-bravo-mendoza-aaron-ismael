@@ -115,6 +115,11 @@ class MainActivity : AppCompatActivity() {
             abrirActividadConParametros(GRecyclerView::class.java)
         }
 
+        val botonHttp = findViewById<Button>(R.id.btn_ir_http)
+        botonHttp.setOnClickListener {
+            abrirActividadConParametros(HHttpActivity::class.java)
+        }
+
     }
 
     fun abrirActividadConParametros(clase: Class<*>) {
