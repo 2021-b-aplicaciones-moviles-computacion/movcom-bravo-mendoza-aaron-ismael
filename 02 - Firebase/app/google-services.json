@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "32420597114",
+    "project_id": "b-aibm-moviles",
+    "storage_bucket": "b-aibm-moviles.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32420597114:android:a727e905c13c443f905ac3",
+        "android_client_info": {
+          "package_name": "com.example.proyectofirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32420597114-9tfuqt4r7i93nva0b1umf38l6vi15i9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGdevNoYFtl71xdzwmoc4PwB8E7_dI_8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32420597114-9tfuqt4r7i93nva0b1umf38l6vi15i9p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
