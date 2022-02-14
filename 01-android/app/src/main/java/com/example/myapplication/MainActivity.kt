@@ -59,9 +59,9 @@ class MainActivity : AppCompatActivity() {
         EBaseDeDatos.TablaUsuario = ESqliteHelperUsuario(this)
 
 
-
+        /*
         if (EBaseDeDatos.TablaUsuario != null) {
-            val idQuemado = 0
+            val idQuemado = 3
             EBaseDeDatos.TablaUsuario?.crearUsuarioFormulario(
                 "Adrian",
                 "Adrian desc"
@@ -86,8 +86,9 @@ class MainActivity : AppCompatActivity() {
                 idQuemado
             )
             Log.i("bdd", "Primera Consulta: ${consulta?.nombre}")
-        }
 
+        }
+        */
         val botonCicloVida = findViewById<Button>(R.id.btn_ir_ciclo_vida)
         botonCicloVida.setOnClickListener {
             irActividad(ACicloVida::class.java)

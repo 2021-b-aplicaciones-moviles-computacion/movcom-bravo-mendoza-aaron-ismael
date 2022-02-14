@@ -60,7 +60,7 @@ class ESqliteHelperUsuario(contexto: Context?) : SQLiteOpenHelper(contexto, "mov
             } while (resultadoConsultaLectura.moveToNext())
         }
         resultadoConsultaLectura.close()
-        baseDatosLectura.close()
+        //baseDatosLectura.close()
         return usuarioEncontrado
     }
 
@@ -68,7 +68,7 @@ class ESqliteHelperUsuario(contexto: Context?) : SQLiteOpenHelper(contexto, "mov
         val conexionEscritura = writableDatabase
         val resultadoEliminacion =
             conexionEscritura.delete("USUARIO", "id=?", arrayOf(id.toString()))
-        conexionEscritura.close()
+        //conexionEscritura.close()
         return if (resultadoEliminacion.toInt() == -1) false else true
     }
 
