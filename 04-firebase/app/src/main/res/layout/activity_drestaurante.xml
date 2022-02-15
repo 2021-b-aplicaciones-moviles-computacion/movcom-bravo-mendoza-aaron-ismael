@@ -6,4 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".DRestaurante">
 
+    <Button
+        android:id="@+id/btn_consultar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="152dp"
+        android:text="Consultar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_datos_prueba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="84dp"
+        android:text="Datos prueba"
+        app:layout_constraintBottom_toTopOf="@+id/btn_consultar"
+        app:layout_constraintEnd_toEndOf="@+id/btn_consultar"
+        app:layout_constraintStart_toStartOf="@+id/btn_consultar" />
+
+    <Button
+        android:id="@+id/btn_crear_restaurante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:text="Crear restaurante"
+        app:layout_constraintBottom_toTopOf="@+id/btn_datos_prueba"
+        app:layout_constraintEnd_toEndOf="@+id/btn_datos_prueba"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/btn_datos_prueba" />
+
+    <EditText
+        android:id="@+id/et_nombre_restaurante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:ems="10"
+        android:hint="Ingrese el nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btn_crear_restaurante"
+        app:layout_constraintEnd_toEndOf="@+id/btn_crear_restaurante"
+        app:layout_constraintStart_toStartOf="@+id/btn_crear_restaurante" />
 </androidx.constraintlayout.widget.ConstraintLayout>

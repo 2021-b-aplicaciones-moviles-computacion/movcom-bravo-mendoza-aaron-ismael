@@ -6,4 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".CProducto">
 
+    <Button
+        android:id="@+id/btn_crear_producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="184dp"
+        android:text="Crear producto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/et_precio_producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:ems="10"
+        android:hint="Ingrese el precio"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btn_crear_producto"
+        app:layout_constraintEnd_toEndOf="@+id/btn_crear_producto"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/btn_crear_producto" />
+
+    <EditText
+        android:id="@+id/et_nombre_producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="92dp"
+        android:ems="10"
+        android:hint="Ingrese el nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/et_precio_producto"
+        app:layout_constraintEnd_toEndOf="@+id/et_precio_producto"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_precio_producto" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
