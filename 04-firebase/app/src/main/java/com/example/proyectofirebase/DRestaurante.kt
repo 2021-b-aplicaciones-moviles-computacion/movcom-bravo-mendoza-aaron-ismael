@@ -2,12 +2,18 @@ package com.example.proyectofirebase
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class DRestaurante : AppCompatActivity() {
+    var query: Query? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drestaurante)
@@ -40,7 +46,7 @@ class DRestaurante : AppCompatActivity() {
             .addOnSuccessListener {
                 editTextNombre.text.clear()
             }
-            .addOnFailureListener{}
+            .addOnFailureListener {}
 
     }
 
@@ -102,6 +108,110 @@ class DRestaurante : AppCompatActivity() {
     }
 
     fun consultar() {
+
+        /*< menor que
+<= menor o igual que
+== igual que
+> mayor que
+>= mayor que o igual que
+!= no igual a
+array-contains
+array-contains-any
+in
+not-in*/
+//        val db = Firebase.firestore
+//
+//        val citiesRef = db.collection("cities")
+//            .orderBy("population")
+//            .limit(2)
+//
+//        citiesRef.get().addOnSuccessListener {
+//            for (ciudad in it) {
+//                Log.i("consultas", "${ciudad.data} ${ciudad.id}")
+//            }
+//        }
+//            .addOnFailureListener { }
+
+//        val citiesRefUnico = db.collection("cities")
+//
+//        citiesRefUnico.document("BJ")
+//            .get()
+//            .addOnSuccessListener {
+//                Log.i("consultar", "${it.data}")
+//            }
+//            .addOnFailureListener { }
+
+//        citiesRef.whereEqualTo("country", "China")
+//            .get()
+//            .addOnSuccessListener {
+//                Log.i("consultas", "${it.documents}")
+//                for (ciudad in it) {
+//                    Log.i("consultas ==", "${ciudad.data}")
+//                    Log.i("consultas", "${ciudad.id}")
+//                }
+//            }
+//            .addOnFailureListener { }
+
+//        citiesRef.whereEqualTo("capital", false)
+//            .whereArrayContains("regions", arrayListOf("socal", "norcal"))
+//            .get()
+//            .addOnSuccessListener {
+//                for (ciudad in it) {
+//                    Log.i("consultas", "== array-contains ${ciudad.data}")
+//                }
+//            }
+
+//        citiesRef.whereEqualTo("capital", true)
+//            .whereGreaterThanOrEqualTo("population", 1000000)
+//            .get()
+//            .addOnSuccessListener {
+//                for (ciudad in it) {
+//                    Log.i("consultas", ">= ${ciudad.data}")
+//                }
+//            }
+//
+//        citiesRef.whereEqualTo("capital", false)
+//            .whereLessThanOrEqualTo("population", 40000000)
+//            .orderBy("population", Query.Direction.DESCENDING)
+//            .get()
+//            .addOnSuccessListener {
+//                for(ciudad in it){
+//                    Log.i("consultas", "<= ${ciudad.data}")
+//                }
+//            }
+        //paginacion
+        val db = Firebase.firestore
+        val refCities = db.collection("cities")
+            .orderBy("population")
+            .limit(2)
+        var tarea: Task<QuerySnapshot>? = null
+        if (query == null) {
+            tarea = refCities.get()
+        } else {
+            tarea = query!!.get()
+        }
+        if (tarea != null) {
+            tarea
+                .addOnSuccessListener { documentSnapshots ->
+                    guardarQuery(documentSnapshots, refCities)
+                    for (ciudad in documentSnapshots) {
+                        Log.i("consultas", "${ciudad.data}")
+                    }
+                }
+                .addOnFailureListener {
+                    Log.i("consultas", "ERROR: ${it}")
+                }
+        }
+    }
+
+    fun guardarQuery(documentSnapshots: QuerySnapshot, refCities: Query) {
+        if (documentSnapshots.size() > 0) {
+            val ultimoDocumento = documentSnapshots.documents[documentSnapshots.size() - 1]
+            query = refCities
+                .startAfter(ultimoDocumento)
+        } else {
+
+        }
 
     }
 
