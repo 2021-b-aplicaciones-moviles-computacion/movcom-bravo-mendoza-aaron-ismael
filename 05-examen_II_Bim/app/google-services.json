@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "530281219659",
+    "project_id": "b-examen-motosfirebase",
+    "storage_bucket": "b-examen-motosfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530281219659:android:f2d3a1eb0b1d5d307cafce",
+        "android_client_info": {
+          "package_name": "com.example.motos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530281219659-265341urqn4b174uvht8o4f3298j7mmu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaXSOQqIb-DBILNzcN2mLQlyBrW1ihPno"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530281219659-265341urqn4b174uvht8o4f3298j7mmu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

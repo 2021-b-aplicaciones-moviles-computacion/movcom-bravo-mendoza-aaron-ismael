@@ -119,18 +119,14 @@ array-contains
 array-contains-any
 in
 not-in*/
-//        val db = Firebase.firestore
-//
-//        val citiesRef = db.collection("cities")
-//            .orderBy("population")
-//            .limit(2)
-//
-//        citiesRef.get().addOnSuccessListener {
-//            for (ciudad in it) {
-//                Log.i("consultas", "${ciudad.data} ${ciudad.id}")
-//            }
-//        }
-//            .addOnFailureListener { }
+        val db = Firebase.firestore
+
+        val citiesRef = db.collection("cities").orderBy("population")//.limit(5)
+        citiesRef.get().addOnSuccessListener {
+            for (ciudad in it) {
+                Log.i("consultas", "${ciudad.data} ${ciudad.id}")
+            }
+        }.addOnFailureListener { }
 
 //        val citiesRefUnico = db.collection("cities")
 //
@@ -180,28 +176,28 @@ not-in*/
 //                }
 //            }
         //paginacion
-        val db = Firebase.firestore
-        val refCities = db.collection("cities")
-            .orderBy("population")
-            .limit(2)
-        var tarea: Task<QuerySnapshot>? = null
-        if (query == null) {
-            tarea = refCities.get()
-        } else {
-            tarea = query!!.get()
-        }
-        if (tarea != null) {
-            tarea
-                .addOnSuccessListener { documentSnapshots ->
-                    guardarQuery(documentSnapshots, refCities)
-                    for (ciudad in documentSnapshots) {
-                        Log.i("consultas", "${ciudad.data}")
-                    }
-                }
-                .addOnFailureListener {
-                    Log.i("consultas", "ERROR: ${it}")
-                }
-        }
+//        val db = Firebase.firestore
+//        val refCities = db.collection("cities")
+//            .orderBy("population")
+//            .limit(2)
+//        var tarea: Task<QuerySnapshot>? = null
+//        if (query == null) {
+//            tarea = refCities.get()
+//        } else {
+//            tarea = query!!.get()
+//        }
+//        if (tarea != null) {
+//            tarea
+//                .addOnSuccessListener { documentSnapshots ->
+//                    guardarQuery(documentSnapshots, refCities)
+//                    for (ciudad in documentSnapshots) {
+//                        Log.i("consultas", "${ciudad.data}")
+//                    }
+//                }
+//                .addOnFailureListener {
+//                    Log.i("consultas", "ERROR: ${it}")
+//                }
+//        }
     }
 
     fun guardarQuery(documentSnapshots: QuerySnapshot, refCities: Query) {
