@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PedidoForm">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/txtIdPedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Id"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/lblCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cliente"
+            android:textColor="@color/red" />
+
+        <Spinner
+            android:id="@+id/spn_clientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/lblVehiculo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vehículo"
+            android:textColor="@color/red" />
+
+        <Spinner
+            android:id="@+id/spn_vehiculo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/lbl_fechaEntrega"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha de Entrega"
+            android:textColor="@color/red" />
+
+        <EditText
+            android:id="@+id/txt_fecha_entrega"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/red" />
+
+        <TextView
+            android:id="@+id/txt_estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estado"
+            android:textColor="@color/red" />
+
+        <RadioGroup
+            android:id="@+id/rg_estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rb_estado_pendiente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/red"
+                android:text="Pendiente" />
+
+            <RadioButton
+                android:id="@+id/rb_estado_enviado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/red"
+                android:text="Enviado" />
+
+            <RadioButton
+                android:id="@+id/rb_estado_entregado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/red"
+                android:text="Entregado" />
+
+        </RadioGroup>
+
+        <ListView
+            android:id="@+id/lv_pedidos_productos"
+            android:layout_width="match_parent"
+            android:layout_height="46dp">
+
+        </ListView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fb_mas_productos_pedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:clickable="true"
+            app:srcCompat="@drawable/mas" />
+
+        <TextView
+            android:id="@+id/tv_total_pedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Total" />
+
+        <Button
+            android:id="@+id/btn_guardar_pedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:insetLeft="0dp"
+            android:text="Guardar" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
