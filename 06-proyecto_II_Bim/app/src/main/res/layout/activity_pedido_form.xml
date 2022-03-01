@@ -105,7 +105,7 @@
         <ListView
             android:id="@+id/lv_pedidos_productos"
             android:layout_width="match_parent"
-            android:layout_height="46dp">
+            android:layout_height="62dp">
 
         </ListView>
 

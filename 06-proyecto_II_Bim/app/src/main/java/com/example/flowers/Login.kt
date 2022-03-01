@@ -16,25 +16,24 @@ class Login : AppCompatActivity() {
         val btnLogin = findViewById<Button>(R.id.btn_login)
         val txtCorreo = findViewById<EditText>(R.id.txt_email)
         val txtContraseña = findViewById<EditText>(R.id.txt_passwd)
-        startActivity(Intent(this, Home::class.java))
-//        btnLogin.setOnClickListener {
-//            if (txtCorreo.text.toString() != "" && txtContraseña.text.toString() != "") {
-//                FirebaseAuth.getInstance().signInWithEmailAndPassword(
-//                    txtCorreo.text.toString(),
-//                    txtContraseña.text.toString()
-//                ).addOnCompleteListener {
-//                    if (it.isSuccessful) {
-//                        startActivity(Intent(this, Home::class.java))
-//                    } else {
-//                        mostrarAlertra("Error en la autenticación")
-//                        txtCorreo.setText("")
-//                        txtContraseña.setText("")
-//                    }
-//                }
-//            } else {
-//                mostrarAlertra("Verifique su correo y contraseña")
-//            }
-//        }
+        btnLogin.setOnClickListener {
+            if (txtCorreo.text.toString() != "" && txtContraseña.text.toString() != "") {
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                    txtCorreo.text.toString(),
+                    txtContraseña.text.toString()
+                ).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        startActivity(Intent(this, Home::class.java))
+                    } else {
+                        mostrarAlertra("Error en la autenticación")
+                        txtCorreo.setText("")
+                        txtContraseña.setText("")
+                    }
+                }
+            } else {
+                mostrarAlertra("Verifique su correo y contraseña")
+            }
+        }
     }
 
     fun mostrarAlertra(mensaje: String) {

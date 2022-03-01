@@ -21,5 +21,22 @@ class Home : AppCompatActivity() {
             FirebaseAuth.getInstance().signOut()
             startActivity(Intent(this, Login::class.java))
         }
+
+        val btnHCliente = findViewById<Button>(R.id.btn_h_clientes)
+        btnHCliente.setOnClickListener {
+            startActivity(Intent(this, ClienteForm::class.java))
+        }
+
+        val btnHProducto = findViewById<Button>(R.id.btn_h_productos)
+        btnHProducto.setOnClickListener {
+            startActivity(Intent(this, ProductoForm::class.java))
+        }
+
+        val btnHVehiculo = findViewById<Button>(R.id.btn_h_vehiculos)
+        btnHVehiculo.setOnClickListener {
+            startActivity(Intent(this, VehiculoForm::class.java))
+        }
+
+
     }
 }

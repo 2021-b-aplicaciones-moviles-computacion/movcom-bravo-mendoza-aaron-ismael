@@ -10,7 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flowers">
         <activity
-            android:name=".Detalle"
+            android:name=".ProductoForm"
+            android:exported="false" />
+        <activity
+            android:name=".VehiculoForm"
+            android:exported="false" />
+        <activity
+            android:name=".ClienteForm"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleForm"
             android:exported="false" />
         <activity
             android:name=".PedidoForm"
